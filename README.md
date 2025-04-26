@@ -25,6 +25,27 @@ For development with auto-reload:
 npm run dev
 ```
 
+## Testing
+
+The application includes comprehensive unit tests. Before running tests:
+
+1. Make sure MySQL is running
+2. Update MySQL credentials in `src/config/db.test.config.js` if needed
+3. Set up the test database:
+```
+npm run setup-test-db
+```
+
+Run tests with:
+```
+npm test
+```
+
+For watch mode during development:
+```
+npm run test:watch
+```
+
 ## API Endpoints
 
 ### Todo API

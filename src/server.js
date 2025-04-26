@@ -37,6 +37,13 @@ require("./routes/item.routes")(app);
 
 // Set port, listen for requests
 const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}.`);
-}); 
+
+// Only start the server if the file is run directly, not imported
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}.`);
+  });
+}
+
+// Export app for testing
+module.exports = app; 
